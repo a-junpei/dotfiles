@@ -20,10 +20,11 @@ call vundle#rc($MY_VIMRUNTIME . '/bundle/')
 
 Bundle 'gmarik/vundle'
 
-Bundle 'scala.vim'
+"Bundle 'scala.vim'
+"Bundle 'vim-scala'
 
 filetype plugin indent on
 
-augroup filetypedetect
-    autocmd! BufNewFile,BufRead *.scala setfiletype scala
-augroup END
+"augroup filetypedetect
+"    autocmd! BufNewFile,BufRead *.scala setfiletype scala
+"augroup END
