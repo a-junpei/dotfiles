@@ -15,16 +15,17 @@ endif
 set nocompatible 
 filetype off
 
-set rtp+=$MY_VIMRUNTIME/vundle.git
-call vundle#rc($MY_VIMRUNTIME . '/bundle/')
+set rtp+=$MY_VIMRUNTIME/neobundle.vim
 
-Bundle 'gmarik/vundle'
+if has('vim_starting')
+  set runtimepath+=$MY_VIMRUNTIME/neobundle.vim
+  call neobundle#rc(expand($MY_VIMRUNTIME . '/bundle/'))
+endif
 
-"Bundle 'scala.vim'
-"Bundle 'vim-scala'
+NeoBundle 'Shougo/neocomplcache'
 
 filetype plugin indent on
 
-"augroup filetypedetect
-"    autocmd! BufNewFile,BufRead *.scala setfiletype scala
-"augroup END
+set number
+
+let g:neocomplcache_enable_at_startup = 1
